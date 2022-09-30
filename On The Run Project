@@ -1,0 +1,80 @@
+#Ezra Song
+#ICS3U1
+#Sept. 29
+#Program for ticket ordering
+
+#Plat ticket cost
+plat = 150.00
+#Gold ticket cost
+gold = 120.50
+#Red ticket cost
+red = 80.75
+#Green ticket cost
+green = 50.25
+
+#Print organizers of event
+print("{:^37}".format("JAY Z AND BEYONCÉ:"))
+#Print tour name
+print("{:^37}".format("On the Run Tour\n"))
+
+#Print costs of section and price column
+print("{:<30} {:}".format("SECTION", "PRICE"))
+#Print costs of plat tickets
+print("{:<29} {:>.2f}".format("Platinum", plat))
+#Print costs of gold tickets
+print("{:<29} {:>.2f}".format("Gold", gold))
+#Print costs of red tickets
+print("{:<30} {:>.2f}".format("Red", red))
+#Print costs of green tickets
+print("{:<30} {:>.2f}".format("Green", green))
+#Print 37 "-"
+print("-" * 37)
+
+#Prompt user to enter amount of plat tickets they desire
+platTicket = int(input("{:35}".format("Enter number of platinum tickets: ")))
+#Prompt user to enter amount of gold tickets they desire
+goldTicket = int(input("{:35}".format("Enter number of gold tickets: ")))
+#Prompt user to enter amount of red tickets they desire
+redTicket = int(input("{:35}".format("Enter number of red tickets: ")))
+#Prompt user to enter amount of green tickets they desire
+greenTicket = int(input("{:35}".format("Enter number of green tickets: ")))
+#Print 37 "-"
+print("-" * 37)
+
+#Calculate subtotal of all tickets
+subTotal = plat * platTicket + gold * goldTicket + red * redTicket + green * greenTicket
+#Calculate HST of tickets
+hst = subTotal * 0.13
+#Calculate service fee
+serviceFee = (platTicket + goldTicket + redTicket + greenTicket) * 12.50
+#Calculate total cost
+total = subTotal + hst + serviceFee
+
+#Print out subTotal
+print("{:<26} ${:>,.2f}".format("SUBTOTAL", subTotal))
+#Print out HST
+print("{:<29} {:>.2f}".format("HST", hst))
+#Print out service fee
+print("{:<29} {:>.2f}".format("SERVICE FEES", serviceFee))
+#Print out total
+print("{:<26} ${:>,.2f}".format("TOTAL", total))
+#Print 37 "-"
+print("-" * 37)
+
+#Print out payment method options
+print("How will you be paying?\n\
+\n\
+1 - VISA\n\
+2 - MasterCard\n\
+3 - American Express \n")
+#Prompt user to enter payment method
+paymentMethod = int(input("{:35}".format("Enter the payment method: ")))
+#Prompt user to enter name
+name = input("\n" + "{:35}".format("Enter your name: "))
+#Prompt user to enter card #
+cardNum = int(input("{:35}".format("Enter the 16-digit number: ")))
+#Prompt user to enter exp date
+expDate = int(input("{:35}".format("Enter the expiry date (mmyyyy): ")))
+
+#Print that the order has been proccessed
+print("\n" + "Thank you " + name + "! Your order has been proccessed!")
